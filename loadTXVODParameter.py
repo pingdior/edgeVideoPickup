@@ -1,0 +1,3 @@
+VODID="AKIDCE1XnmUw6zbw1pMddMo1ye4D6j490Zrs";
+VODKEY="lFUTCfusYy7zZ1D8m9E3cuvgAMIyNVMx";
+VODAREA="ap-shanghai";
