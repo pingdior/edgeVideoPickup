@@ -1,11 +1,12 @@
 #!/bin/sh
 
 command="/home/pi/software/txiot/sdk2/output/release/bin/data_template_sample"
+dirApp="/home/pi/software/txiot/sdk2/output/release/bin/"
 
 
 appname=data_template_sample
 
-logfile=/usr/local/log/data_temlate_sample.log
+logfile=/home/pi/software/txiot/sdk2/data_temlate_sample.log
 
 #返回 ps -ef 出来的所有字符串中含有 $appname 的进程个数
 
@@ -35,7 +36,8 @@ if [ 0 = $checkrun ]; then
 
         #./$appname $appname &logfile
 
-   nohup $command >/dev/null    2>&1 &
+    cd $dirApp
+   nohup $command > $logfile    2>&1 &
 
     #nohup  /usr/local/Presto/presto-server-0.100/bin/launcher run  >  presto_run.log  2>&1 &
 
