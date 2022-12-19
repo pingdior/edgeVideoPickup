@@ -39,11 +39,12 @@ def convert_to_mp4(source_path):
     else:
         return
 
-def mp4LoadTXVod(mpFileName,vodID,vodKey,vodArea):
+def mp4LoadTXVod(mpFileName,vodID,vodKey,vodArea,vodAppId):
  client = VodUploadClient(vodID,vodKey)
  request = VodUploadRequest()
  request.MediaFilePath = mpFileName;
  request.StorageRegion = vodArea;
+ request.SubAppId = vodAppId;
  try:
    response = client.upload(vodArea,request)
    print(response.FileId)

@@ -10,4 +10,4 @@ print mp4FilePath
 print "--------------------------------"
 autoCamera.getCamera(h264FilePath);
 h264_to_mp4.convert_to_mp4(h264FilePath,mp4FilePath);
-autoCamera.mp4LoadTXVod(mp4FilePath,loadTXVODParameter.VODID,loadTXVODParameter.VODKEY,loadTXVODParameter.VODAREA);
+autoCamera.mp4LoadTXVod(mp4FilePath,loadTXVODParameter.VODID,loadTXVODParameter.VODKEY,loadTXVODParameter.VODAREA,loadTXVODParameter.VODAPPID);
