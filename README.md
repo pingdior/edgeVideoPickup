@@ -10,7 +10,11 @@
 - MP_PATH=/usr/local/MP4Box/bin
 - export PATH=$PATH:$MP_PATH
 ### 可使用 MP4Box -h来测试，是否安装成功
-### sudo apt-get install gpac
+### 会出现安装成功，但是CRONTAB运行不成功的例子
+- PYTHON文件相关导入文件路径指定
+- 改成SH文件，通过CD，更新当前路径
+- 通过SH文件执行PYTHON doCreaMP4.py
+- 执行：apt-get install gpac
 ## 最后，运行主程序：python doCreatMP4.py
 一分钟左右，数据可以在指定APPID的云点播库查看到
 ## 也可以使用crontab程序，在设置时间间隔内执行，例如：
