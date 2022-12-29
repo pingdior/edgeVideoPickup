@@ -10,15 +10,19 @@
 - MP_PATH=/usr/local/MP4Box/bin
 - export PATH=$PATH:$MP_PATH
 ### 可使用 MP4Box -h来测试，是否安装成功
+### sudo apt-get install gpac
 ## 最后，运行主程序：python doCreatMP4.py
 一分钟左右，数据可以在指定APPID的云点播库查看到
 ## 也可以使用crontab程序，在设置时间间隔内执行，例如：
 ## #每天23:30腾讯上传云点播的短视频
-- 25 23 * * *  sudo chmod 755 /home/pi/txvod/h264/*.
+- 25 23 * * *  sudo chmod 755 /home/pi/txvod/h264/*.*
 - 25 23 * * *  sudo chmod 755 /home/pi/txvod/mp4/*.*
 
 - 30 23 * * *  rm /home/pi/txvod/h264/*.*
 - 5 23 * * *  rm /home/pi/txvod/mp4/*.*
 
 ## #在规定时间范围内每隔3分钟上传云点播短视频
-- */3 * * * * python /home/pi/txvod/doCreatMP4.py >>/dev/null 2>&1
+*/3 * * * * sh  /home/pi/tailup/txvod/vod-python-sdk/excute.sh  >>/dev/null  2>&1 &
+
+if crontab fail, we can use "cd" current path 
+
