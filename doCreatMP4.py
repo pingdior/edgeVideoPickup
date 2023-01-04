@@ -1,4 +1,5 @@
 import h264_to_mp4
+import os
 import autoCamera
 import loadTXVODParameter
 import datetime
@@ -22,7 +23,7 @@ mediaUrl = autoCamera.mp4LoadTXVod(mp4FilePath,
         loadTXVODParameter.VODAPPID);
         
 print("<5.1> mediaUrl:"+mediaUrl+"--------------------------------------------------------")
-print("<5.2> MEDIOURLDIR:"+MEDIOURLDIR+"-----------------------------------------------------")
+print("<5.2> MEDIOURLDIR:"+ctcmsconf.MEDIOURLDIR+"-----------------------------------------------------")
 localtime = datetime.datetime.now()
 timeStr = localtime.strftime('%Y-%m-%d-%H-%M-%S')
 print("<5.3> timeStr:"+timeStr+"--------------------------------------------------------")
