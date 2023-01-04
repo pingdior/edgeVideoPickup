@@ -15,16 +15,22 @@ autoCamera.getCamera(h264FilePath);
 print "<3> has h264file--------------------------------"
 h264_to_mp4.convert_to_mp4(h264FilePath,mp4FilePath);
 print "<4> has mp4file--------------------------------"
-mediaUrl = autoCamera.mp4LoadTXVod(mp4FilePath,loadTXVODParameter.VODID,loadTXVODParameter.VODKEY,loadTXVODParameter.VODAREA);
+mediaUrl = autoCamera.mp4LoadTXVod(mp4FilePath,
+        loadTXVODParameter.VODID,
+        loadTXVODParameter.VODKEY,
+        loadTXVODParameter.VODAREA,
+        loadTXVODParameter.VODAPPID);
+        
 print("<5.1> mediaUrl:"+mediaUrl+"--------------------------------------------------------")
 print("<5.2> MEDIOURLDIR:"+MEDIOURLDIR+"-----------------------------------------------------")
 localtime = datetime.datetime.now()
 timeStr = localtime.strftime('%Y-%m-%d-%H-%M-%S')
 print("<5.3> timeStr:"+timeStr+"--------------------------------------------------------")
 
-    exist=os.path.exists(ctcmsconf.MEDIOURLDIR)
-    if not exist:
-        os.makedirs(ctcmsconf.MEDIOURLDIR)
+exist=os.path.exists(ctcmsconf.MEDIOURLDIR)
+if not exist:
+    os.makedirs(ctcmsconf.MEDIOURLDIR)
+
 if mediaUrl != "":
    fileName = ctcmsconf.MEDIOURLDIR+timeStr+".txt"
    fw = open(fileName ,'w');
