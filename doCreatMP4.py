@@ -38,7 +38,7 @@ if mediaUrl != "":
    fw.write(mediaUrl);
    print("<6> File is URL OK "+"--------------------------------------------------------")
 else:
-   fileName =  MEDIOURLDIR+"error"+timeStr+".txt"
+   fileName =  ctcmsconf.MEDIOURLDIR+"error"+timeStr+".txt"
    fw = open(fileName ,'w');
    print("<6> File is ERROR OK "+"--------------------------------------------------------")
 fw.close()
