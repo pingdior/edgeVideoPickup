@@ -3,7 +3,7 @@ from qcloud_vod.model import VodUploadRequest
 import time
 from picamera import PiCamera
 from time import sleep
-import os
+import os,sys,stat
 
 def getFileName():
   localtime = time.localtime(time.time());
@@ -19,6 +19,7 @@ def getCamera(fileName):
    sleep(30);
    camera.stop_recording();
    camera.stop_preview();
+   os.chmod(fileName,stat.S_IRWXU|stat.S_IXOTH);
   except Exception as err:
    print(err)
   return
@@ -49,7 +50,7 @@ def mp4LoadTXVod(mpFileName,vodID,vodKey,vodArea,vodAppId):
    response = client.upload(vodArea,request)
    print(response.FileId)
    print(response.MediaUrl)
-   return response.FileId
+   return response.MediaUrl
  except Exception as err:
    print(err)
    return ""
